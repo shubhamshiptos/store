@@ -1,0 +1,59 @@
+<!-- <div class="right" *ngIf="users">
+
+  <h3>Users</h3>
+  <ul>
+    <li (click)="deleteUser(i)" *ngFor="let data of users | async; let i = index">
+      <a>{{ data.first_Name }} {{data.last_Name}} - {{data.email}} - {{data.monthly_Add_Budget}} - {{data.phone}}</a>
+    </li>
+  </ul>
+
+</div> -->
+
+
+
+<section class="login-form1">
+  <div class="container">
+    <div class="left">
+      <div class="text-center">
+       <h3>Users</h3>
+       
+      </div>
+       
+      <li *ngFor="let data of users | async; let i = index">
+        <a>{{ data.first_Name }} {{data.last_Name}} - {{data.email}} - {{data.monthly_Add_Budget}} - {{data.phone}}</a>
+      </li>
+     </div>
+
+
+
+        <div class="signup-form">
+         <div class="text-center">
+          <h3> We'll be in touch to get your trial setup.</h3>
+          
+         </div>
+          
+          <form>
+            <div class="form-control">
+              <label>Do u want to make ads that convets?</label>
+              <div class="fc2">
+                <ul>
+                  <li><input type="radio" name="gender" value="yes"> Yes</li>
+                  <li><input type="radio" name="gender" value="no"> No</li>
+                </ul>
+              </div>
+              
+            </div>
+            <div class="form-control">
+              <label>Whats your monthly ads budget?</label>
+              <select>
+                <option *ngFor="let data of monthly_Avg_Budget" [value]="data.m_a_b">{{data.m_a_b}}</option>
+               
+              </select>
+            </div>
+            <div class="form-control">
+              <button (click)="navigate()">GET STARTED</button>
+            </div>
+          </form>
+        </div>
+  </div>
+</section>

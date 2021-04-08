@@ -1,0 +1,113 @@
+<!-- <div class="left">
+
+
+  <form [formGroup]="create_User_Form">
+
+  <div class="row">
+  <input type="text" placeholder="first name" formControlName="first_Name">
+  <div *ngIf="is_Submitted && g.first_Name.errors" class="error">
+    <div class="error" *ngIf="g.first_Name.errors.required">First Name Required</div>
+   </div>
+  </div>
+  <div class="row">
+  <input type="text" placeholder="last name" formControlName="last_Name">
+  <div *ngIf="is_Submitted && g.last_Name.errors" class="error">
+    <div  class="error" *ngIf="g.last_Name.errors.required">Last Name Required</div>
+   </div>
+</div>
+<div class="row">
+  <input type="text" placeholder="email" formControlName="email">
+  <div *ngIf="is_Submitted && g.email.errors" class="error">
+    <div  class="error" *ngIf="g.email.errors.required">Email Required</div>
+   </div>
+</div>
+<div class="row">
+  <div class="col">
+  <input type="number" placeholder="monthly budget" formControlName="monthly_Add_Budget">
+  <div *ngIf="is_Submitted && g.monthly_Add_Budget.errors" class="error">
+    <div class="error" *ngIf="g.monthly_Add_Budget.errors.required">Monthly Budget Required</div>
+   </div>
+</div>
+</div>
+<div class="row">
+<div class="col">
+  <input type="number" placeholder="Phone" formControlName="phone">
+  <div *ngIf="is_Submitted && g.phone.errors" class="error">
+    <div  class="error" *ngIf="g.phone.errors.required">Phone Number Required</div>
+   </div>
+</div>
+</div>
+
+</form>
+
+  <button (click)="addUser()">Add a User</button>
+</div> -->
+
+
+
+
+<section class="login-form1">
+  <div class="container">
+        <div class="signup-form">
+         <div class="text-center">
+          <h2> We'll be in touch to get your trial setup.</h2>
+          <span>fill out form</span>
+         </div>
+          
+          <form [formGroup]="create_User_Form">
+            <div class="form-control fc2">
+              <input type="text" name="cname" placeholder="First name" formControlName="first_Name">
+              <div *ngIf="is_Submitted && g.first_Name.errors" class="error">
+                <div  class="error" *ngIf="g.first_Name.errors.required">First Name Required</div>
+               </div>
+              <input type="text" name="cname" placeholder="Last name" formControlName="last_Name">
+              <div *ngIf="is_Submitted && g.last_Name.errors" class="error">
+                <div  class="error" *ngIf="g.last_Name.errors.required">Last Name Required</div>
+               </div>
+              <!-- <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <input type="text" name="cname" placeholder="First name">
+                  
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <input type="text" name="cname" placeholder="last name">
+                  
+                </div>
+              </div> -->
+            </div>
+
+            <div class="form-control">
+              <input type="text" name="email" placeholder="Work Email"  formControlName="email">
+              <div *ngIf="is_Submitted && g.email.errors" class="error">
+                <div  class="error" *ngIf="g.email.errors.required">Email Required</div>
+                <div  class="error" *ngIf="g.email.errors.pattern">Invalid Input</div>
+               </div>
+            </div>
+
+            <div class="form-control">
+            <input type="number" name="email" placeholder="Monthly Advertizing Budget" formControlName="monthly_Add_Budget">
+            <div *ngIf="is_Submitted && g.monthly_Add_Budget.errors" class="error">
+              <div class="error" *ngIf="g.monthly_Add_Budget.errors.required">Monthly Budget Required</div>
+              <div class="error" *ngIf="g.monthly_Add_Budget.errors.pattern">Invalid Input</div>
+             </div>
+              
+            </div>
+            <div class="form-control fcp">
+              <input type="number" name="phonenumber" placeholder="+91" formControlName="phone">
+                <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ5NiA0OTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5NiA0OTY7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIHN0eWxlPSJmaWxsOiMzNTk4NDY7IiBkPSJNMCwzMDR2NjUuNkMwLDM5Ni44LDIxLjYsNDE2LDQ4LDQxNmg0MDBjMjYuNCwwLDQ4LTE5LjIsNDgtNDYuNFYzMDRIMHoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNFQTg2MzQ7IiBkPSJNNDQ4LDgwSDQ4QzIxLjYsODAsMCw5OS4yLDAsMTI2LjRWMTkyaDQ5NnYtNjUuNkM0OTYsOTkuMiw0NzQuNCw4MCw0NDgsODB6Ii8+DQo8cmVjdCB5PSIxOTIiIHN0eWxlPSJmaWxsOiNGQ0ZCRjA7IiB3aWR0aD0iNDk2IiBoZWlnaHQ9IjExMiIvPg0KPHBhdGggc3R5bGU9ImZpbGw6IzIxODcyRjsiIGQ9Ik00NDYuNCw0MTZjMjYuNCwwLDQ5LjYtMTkuMiw0OS42LTQ2LjRWMzA0SDMxNS4yTDQ0Ni40LDQxNnoiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNFMjc0MjM7IiBkPSJNNDQ4LDgwSDQ4bDEzMi44LDExMkg0OTZ2LTY1LjZDNDk2LDk5LjIsNDc0LjQsODAsNDQ4LDgweiIvPg0KPHBvbHlnb24gc3R5bGU9ImZpbGw6I0Y3RjRFMjsiIHBvaW50cz0iMzE2LDMwNCA0OTYsMzA0IDQ5NiwxOTIgMTgwLDE5MiAiLz4NCjxwYXRoIHN0eWxlPSJmaWxsOiNEODY2MTk7IiBkPSJNNDQ4LDgwSDQ4bDM3MC40LDExMkg0OTZ2LTY1LjZDNDk2LDk5LjIsNDc0LjQsODAsNDQ4LDgweiIvPg0KPHBvbHlnb24gc3R5bGU9ImZpbGw6I0YyRTlDMjsiIHBvaW50cz0iNDk2LDIxNC40IDQ5NiwxOTIgNDE0LjQsMTkyICIvPg0KPHBhdGggc3R5bGU9ImZpbGw6IzE2N0EyMDsiIGQ9Ik00OTYsMzY4LjhjMCwyOC44LTIxLjYsNDcuMi00OCw0Ny4ySDQ4Yy0yNi40LDAtNDgtMjAuOC00OC00OCIvPg0KPHBhdGggc3R5bGU9ImZpbGw6IzdEN0RCQzsiIGQ9Ik0yNDgsMTk3LjZjLTI4LDAtNTAuNCwyMi40LTUwLjQsNTAuNHMyMi40LDUwLjQsNTAuNCw1MC40czUwLjQtMjIuNCw1MC40LTUwLjRTMjc2LDE5Ny42LDI0OCwxOTcuNnoNCgkgTTI4OS42LDI1My42YzAsMC44LDAuOCwyLjQsMS42LDIuNGMtMC44LDIuNC0wLjgsNC44LTEuNiw3LjJjLTAuOC0wLjgtMi40LDAtMy4yLDAuOGMtMC44LDAuOCwwLDIuNCwwLjgsMy4yDQoJYy0wLjgsMi40LTIuNCw0LTMuMiw2LjRjLTAuOC0wLjgtMi40LTAuOC0zLjIsMC44Yy0wLjgsMC44LTAuOCwyLjQsMCwzLjJjLTAuOCwwLjgtMS42LDEuNi0yLjQsMi40bC0xNy42LTIwbC03LjItNS42bDAuOC0wLjgNCglsNy4yLDUuNmwyMy4yLDEybC0yMC44LTE2bC04LTMuMmMwLTAuOCwwLTAuOCwwLjgtMS42bDgsMy4ybDI1LjYsNS42bC0yNC44LThsLTguOC0xLjZjMC0wLjgsMC0wLjgsMC0xLjZsOC44LDAuOGwyNi40LTEuNg0KCWwtMjYuNC0xLjZsLTguOCwwLjhjMC0wLjgsMC0wLjgsMC0xLjZsOC44LTEuNmwyNC44LThsLTI1LjYsNS42bC04LDMuMmMwLTAuOCwwLTAuOC0wLjgtMS42bDgtMy4ybDIyLjQtMTQuNGwtMjMuMiwxMmwtNy4yLDUuNg0KCWwtMC44LTAuOGw3LjItNS42bDE3LjYtMjBjMC44LDAuOCwxLjYsMS42LDIuNCwyLjRjLTAuOCwwLjgtMC44LDIuNCwwLDMuMnMyLjQsMC44LDMuMiwwLjhjMS42LDEuNiwyLjQsNCwzLjIsNi40DQoJYy0wLjgsMC44LTEuNiwxLjYtMC44LDMuMmMwLjgsMC44LDEuNiwxLjYsMy4yLDAuOGMwLjgsMi40LDEuNiw0LjgsMS42LDcuMmMtMC44LDAtMS42LDEuNi0xLjYsMi40YzAsMC44LDEuNiwyLjQsMi40LDEuNg0KCWMwLDAuOCwwLDIuNCwwLDMuMnMwLDIuNCwwLDMuMkMyOTAuNCwyNTEuMiwyODkuNiwyNTIsMjg5LjYsMjUzLjZ6IE0yMjAsMjE0LjRjMC44LDAuOCwyLjQsMC44LDMuMiwwczAuOC0yLjQsMC44LTMuMg0KCWMxLjYtMS42LDQtMi40LDYuNC0zLjJjMC44LDAuOCwxLjYsMS42LDMuMiwwLjhjMC44LTAuOCwxLjYtMS42LDAuOC0zLjJjMi40LTAuOCw0LjgtMS42LDcuMi0xLjZjMCwwLjgsMS42LDEuNiwyLjQsMS42DQoJYzAuOCwwLDIuNC0xLjYsMS42LTIuNGMwLjgsMCwyLjQsMCwzLjIsMGMwLjgsMCwyLjQsMCwzLjIsMGMwLDAuOCwwLjgsMi40LDEuNiwyLjRjMC44LDAsMi40LTAuOCwyLjQtMS42YzIuNCwwLjgsNC44LDAuOCw3LjIsMS42DQoJYy0wLjgsMC44LDAsMi40LDAuOCwzLjJzMi40LDAsMy4yLTAuOGMyLjQsMC44LDQsMi40LDYuNCwzLjJjLTAuOCwwLjgtMC44LDIuNCwwLjgsMy4yYzAuOCwwLjgsMi40LDAuOCwzLjIsMA0KCWMwLjgsMC44LDEuNiwxLjYsMi40LDIuNGwtMjAsMTcuNmwtNS42LDcuMmwtMC44LTAuOGw1LjYtNy4ybDEyLTIzLjJsLTE2LDIxLjZsLTMuMiw4Yy0wLjgsMC0wLjgsMC0xLjYtMC44bDMuMi04bDUuNi0yNS42bC04LDI0LjgNCglsLTEuNiw4LjhjLTAuOCwwLTAuOCwwLTEuNiwwbDAuOC04LjhMMjQ4LDIwNGwtMS42LDI2LjRsMC44LDguOGMtMC44LDAtMC44LDAtMS42LDBsLTEuNi04LjhsLTgtMjQuOGw1LjYsMjUuNmwzLjIsOA0KCWMtMC44LDAtMC44LDAtMS42LDAuOGwtMy4yLThsLTE0LjQtMjIuNGwxMiwyMy4ybDUuNiw3LjJsLTAuOCwwLjhsLTUuNi03LjJsLTIwLTE3LjZDMjE3LjYsMjE2LDIxOC40LDIxNS4yLDIyMCwyMTQuNHoNCgkgTTIxNi44LDI3OS4yYy0wLjgtMC44LTEuNi0xLjYtMi40LTIuNGMwLjgtMC44LDAuOC0yLjQsMC0zLjJjLTAuOC0wLjgtMi40LTAuOC0zLjItMC44Yy0xLjYtMS42LTIuNC00LTMuMi02LjQNCgljMC44LTAuOCwxLjYtMS42LDAuOC0zLjJjLTAuOC0wLjgtMS42LTEuNi0zLjItMC44Yy0wLjgtMi40LTEuNi00LjgtMS42LTcuMmMwLjgsMCwxLjYtMS42LDEuNi0yLjRzLTEuNi0yLjQtMi40LTEuNg0KCWMwLTAuOCwwLTIuNCwwLTMuMnMwLTIuNCwwLTMuMmMwLjgsMCwyLjQtMC44LDIuNC0xLjZzLTAuOC0yLjQtMS42LTIuNGMwLjgtMi40LDAuOC00LjgsMS42LTcuMmMwLjgsMC44LDIuNCwwLDMuMi0wLjgNCglzMC0yLjQtMC44LTMuMmMwLjgtMi40LDIuNC00LDMuMi02LjRjMC44LDAuOCwyLjQsMC44LDMuMi0wLjhzMC44LTIuNCwwLTMuMmMwLjgtMC44LDEuNi0xLjYsMi40LTIuNGwxNy42LDIwbDcuMiw1LjZsLTAuOCwwLjgNCglsLTcuMi01LjZsLTIzLjItMTJsMjIuNCwxNC40bDgsMy4yYzAsMC44LDAsMC44LTAuOCwxLjZsLTgtMy4ybC0yNS42LTUuNmwyNC44LDhsOC44LDEuNmMwLDAuOCwwLDAuOCwwLDEuNmwtOC44LTAuOEwyMDQsMjQ4DQoJbDI2LjQsMS42bDguOC0wLjhjMCwwLjgsMCwwLjgsMCwxLjZsLTguOCwxLjZsLTI0LjgsOGwyNS42LTUuNmw4LTMuMmMwLDAuOCwwLDAuOCwwLjgsMS42bC04LDMuMmwtMjIuNCwxNC40bDIzLjItMTJsNy4yLTUuNg0KCWwwLjgsMC44bC03LjIsNS42TDIxNi44LDI3OS4yeiBNMjQ0LjgsMjkyYzAtMC44LTAuOC0yLjQtMS42LTIuNHMtMi40LDAuOC0yLjQsMS42Yy0yLjQtMC44LTQuOC0wLjgtNy4yLTEuNmMwLjgtMC44LDAtMi40LTAuOC0zLjINCglzLTIuNCwwLTMuMiwwLjhjLTIuNC0wLjgtNC0yLjQtNi40LTMuMmMwLjgtMC44LDAuOC0yLjQtMC44LTMuMmMtMC44LTAuOC0yLjQtMC44LTMuMiwwYy0wLjgtMC44LTEuNi0xLjYtMi40LTIuNGwyMC0xNy42bDUuNi03LjINCglsMC44LDAuOGwtNS42LDcuMmwtMTIsMjMuMmwxNC40LTIyLjRsMy4yLThjMC44LDAsMC44LDAsMS42LDAuOGwtMy4yLDhsLTUuNiwyNS42bDgtMjQuOGwxLjYtOC44YzAuOCwwLDAuOCwwLDEuNiwwbC0wLjgsOC44DQoJbDEuNiwyNi40bDEuNi0yNi40bC0wLjgtOC44YzAuOCwwLDAuOCwwLDEuNiwwbDEuNiw4LjhsOCwyNC44bC01LjYtMjUuNmwtMy4yLThjMC44LDAsMC44LDAsMS42LTAuOGwzLjIsOGwxNC40LDIyLjRsLTEyLTIzLjINCglsLTUuNi03LjJsMC44LTAuOGw1LjYsNy4ybDIwLDE3LjZjLTAuOCwwLjgtMS42LDEuNi0yLjQsMi40Yy0wLjgtMC44LTIuNC0wLjgtMy4yLDBjLTAuOCwwLjgtMC44LDIuNC0wLjgsMy4yDQoJYy0xLjYsMS42LTQsMi40LTYuNCwzLjJjLTAuOC0wLjgtMS42LTEuNi0zLjItMC44cy0xLjYsMS42LTAuOCwzLjJjLTIuNCwwLjgtNC44LDEuNi03LjIsMS42YzAtMC44LTEuNi0xLjYtMi40LTEuNg0KCXMtMi40LDEuNi0xLjYsMi40Yy0wLjgsMC0yLjQsMC0zLjIsMFMyNDUuNiwyOTIsMjQ0LjgsMjkyeiIvPg0KPGc+DQoJPHBvbHlnb24gc3R5bGU9ImZpbGw6IzYwNjBCMjsiIHBvaW50cz0iMjU5LjIsMjU3LjYgMjYxLjYsMjYwIDI2MS42LDI1OS4yIAkiLz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojNjA2MEIyOyIgZD0iTTI0OCwxOTcuNmMtMTUuMiwwLTI4LjgsNy4yLTM4LjQsMTcuNmw0LjgsNGMwLjgtMC44LDEuNi0xLjYsMi40LTIuNGMwLjgtMC44LDEuNi0xLjYsMi40LTIuNA0KCQljMC44LDAuOCwyLjQsMC44LDMuMiwwczAuOC0yLjQsMC44LTMuMmMwLjgtMC44LDIuNC0wLjgsMy4yLTEuNmwxMiwyMy4ybDUuNiw3LjJsLTAuOCwwLjhsLTUuNi03LjJsLTIwLTE3LjZsMTYuOCwxOS4ybDIuNCwxLjYNCgkJbDQuOCw0bDAsMGwxMy42LDExLjJsMC44LTAuOGw3LjIsNS42bDIzLjIsMTJjLTAuOCwwLjgtMC44LDIuNC0xLjYsMy4yYy0wLjgtMC44LTIuNC0wLjgtMy4yLDAuOGMtMC44LDAuOC0wLjgsMi40LDAsMy4ybDAsMA0KCQlsNC44LDRjNy4yLTguOCwxMi0yMCwxMi0zMi44QzI5OC40LDIyMCwyNzYsMTk3LjYsMjQ4LDE5Ny42eiBNMjQ0LDI0MGwtMy4yLThsLTE0LjQtMjEuNmMwLjgtMC44LDEuNi0xLjYsMy4yLTEuNg0KCQljMC44LDAuOCwxLjYsMS42LDMuMiwwLjhjMC44LTAuOCwxLjYtMS42LDAuOC0zLjJjMC44LDAsMi40LTAuOCwzLjItMC44bDUuNiwyNS42bDMuMiw4QzI0NC44LDI0MCwyNDQuOCwyNDAsMjQ0LDI0MHoNCgkJIE0yNDguOCwyMzkuMmwwLjgtOC44TDI0OCwyMDRsLTEuNiwyNi40bDAuOCw4LjhjLTAuOCwwLTAuOCwwLTEuNiwwbC0xLjYtOC44bC04LTI0LjhjMC44LDAsMi40LTAuOCwzLjItMC44DQoJCWMwLDAuOCwxLjYsMS42LDIuNCwxLjZjMC44LDAsMi40LTEuNiwxLjYtMi40YzAuOCwwLDIuNCwwLDMuMiwwczIuNCwwLDMuMiwwYzAsMC44LDAuOCwyLjQsMS42LDIuNGMwLjgsMCwyLjQtMC44LDIuNC0xLjYNCgkJYzAuOCwwLDIuNCwwLjgsMy4yLDAuOGwtOCwyNC44bC0xLjYsOC44QzI0OS42LDIzOS4yLDI0OC44LDIzOS4yLDI0OC44LDIzOS4yeiBNMjUwLjQsMjQwbDMuMi04bDUuNi0yNS42YzAuOCwwLDIuNCwwLjgsMy4yLDAuOA0KCQljLTAuOCwwLjgsMCwyLjQsMC44LDMuMnMyLjQsMCwzLjItMC44YzAuOCwwLjgsMi40LDAuOCwzLjIsMS42TDI1NS4yLDIzMmwtMy4yLDhDMjUxLjIsMjQwLDI1MS4yLDI0MCwyNTAuNCwyNDB6IE0yODYuNCwyNjQNCgkJYy0wLjgsMC44LDAsMi40LDAuOCwzLjJjLTAuOCwwLjgtMC44LDIuNC0xLjYsMy4yTDI2NCwyNTUuMmwtOC0zLjJjMC0wLjgsMC0wLjgsMC44LTEuNmw4LDMuMmwyNS42LDUuNmMwLDAuOC0wLjgsMi40LTAuOCwzLjINCgkJQzI4OCwyNjIuNCwyODcuMiwyNjMuMiwyODYuNCwyNjR6IE0yOTIsMjQ0LjhjMCwwLjgsMCwyLjQsMCwzLjJjMCwwLjgsMCwyLjQsMCwzLjJjLTAuOCwwLTIuNCwwLjgtMi40LDEuNmMwLDAuOCwwLjgsMi40LDEuNiwyLjQNCgkJYzAsMC44LTAuOCwyLjQtMC44LDMuMmwtMjQuOC04bC04LjgtMS42YzAtMC44LDAtMC44LDAtMS42bDguOCwwLjhsMjYuNC0xLjZsLTI2LjQtMS42bC04LjgsMC44YzAtMC44LDAtMC44LDAtMS42bDguOC0xLjZsMjQuOC04DQoJCWMwLDAuOCwwLjgsMi40LDAuOCwzLjJjLTAuOCwwLTEuNiwxLjYtMS42LDIuNEMyODkuNiwyNDQsMjkwLjQsMjQ0LjgsMjkyLDI0NC44eiBNMjg2LjQsMjMyYzAuOCwwLjgsMS42LDEuNiwzLjIsMC44DQoJCWMwLDAuOCwwLjgsMi40LDAuOCwzLjJsLTI1LjYsNS42bC04LDMuMmMwLTAuOCwwLTAuOC0wLjgtMS42bDgtMy4ybDIxLjYtMTQuNGMwLjgsMC44LDEuNiwxLjYsMS42LDMuMg0KCQlDMjg2LjQsMjI5LjYsMjg1LjYsMjMxLjIsMjg2LjQsMjMyeiBNMjg1LjYsMjI2LjRsLTIzLjIsMTJsLTcuMiw1LjZsLTAuOC0wLjhsNy4yLTUuNmwxNy42LTIwbC0yMCwxNy42bC01LjYsNy4ybC0wLjgtMC44bDUuNi03LjINCgkJbDEyLTIzLjJjMC44LDAuOCwyLjQsMC44LDMuMiwxLjZjLTAuOCwwLjgtMC44LDIuNCwwLjgsMy4yYzAuOCwwLjgsMi40LDAuOCwzLjIsMGMwLjgsMC44LDEuNiwxLjYsMi40LDIuNHMxLjYsMS42LDIuNCwyLjQNCgkJYy0wLjgsMC44LTAuOCwyLjQsMCwzLjJzMi40LDAuOCwzLjIsMC44QzI4NC44LDIyNCwyODUuNiwyMjQuOCwyODUuNiwyMjYuNHoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K" />
+              </div>
+              <div *ngIf="is_Submitted && g.phone.errors" class="error">
+                <div  class="error" *ngIf="g.phone.errors.required">Phone Number Required</div>
+                <div  class="error" *ngIf="g.phone.errors.pattern">Invalid Input</div>
+               </div>
+            
+
+           
+
+            <div class="form-control">
+              <button (click)="addUser()">GET FREE TRIAL</button>
+            </div>
+          </form>
+        </div>
+  </div>
+</section>
